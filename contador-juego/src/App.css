@@ -1,0 +1,386 @@
+.contador-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #581c87, #1e3a8a, #312e81);
+  padding: 1rem;
+}
+
+.contador-wrapper {
+  max-width: 1536px;
+  margin: 0 auto;
+}
+
+/* Título principal */
+.contador-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1; 
+  }
+  50% { 
+    opacity: 0.8; 
+  }
+}
+
+/* Grid principal */
+.contador-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .contador-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Panel de control */
+.contador-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contador-display {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contador-number {
+  font-size: 3.75rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.contador-number:hover {
+  transform: scale(1.1);
+}
+
+.contador-history {
+  color: #d1d5db;
+  font-size: 0.875rem;
+}
+
+/* Botones principales */
+.contador-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transform-origin: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-increment {
+  background-color: #10b981;
+}
+
+.btn-increment:hover {
+  background-color: #059669;
+}
+
+.btn-decrement {
+  background-color: #ef4444;
+}
+
+.btn-decrement:hover {
+  background-color: #dc2626;
+}
+
+.btn-reset {
+  background-color: #6b7280;
+}
+
+.btn-reset:hover {
+  background-color: #4b5563;
+}
+
+/* Controles adicionales */
+.contador-controls {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+
+.btn-small:hover {
+  transform: scale(1.05);
+}
+
+.btn-auto {
+  background-color: #3b82f6;
+}
+
+.btn-auto:hover {
+  background-color: #2563eb;
+}
+
+.btn-stop {
+  background-color: #f97316;
+}
+
+.btn-stop:hover {
+  background-color: #ea580c;
+}
+
+.btn-load {
+  background-color: #8b5cf6;
+}
+
+.btn-load:hover {
+  background-color: #7c3aed;
+}
+
+/* Sección de datos curiosos */
+.contador-facts {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  max-height: 10rem;
+  overflow-y: auto;
+}
+
+.facts-title {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.facts-empty {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.facts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fact-item {
+  color: #d1d5db;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+/* Panel de gráfica */
+.contador-chart {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chart-title {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.chart-container {
+  height: 16rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.chart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.chart-bar {
+  background: linear-gradient(to top, #06b6d4, #3b82f6);
+  border-radius: 0.25rem 0.25rem 0 0;
+  transition: all 1s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.chart-bar:hover {
+  background: linear-gradient(to top, #ec4899, #eab308);
+}
+
+.chart-value {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.chart-bar:hover .chart-value {
+  opacity: 1;
+}
+
+.chart-label {
+  color: white;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.chart-update-btn {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #06b6d4;
+}
+
+.chart-update-btn:hover {
+  background-color: #0891b2;
+}
+
+.chart-update-btn:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Gráfica de historial */
+.contador-history-chart {
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.history-title {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.history-container {
+  height: 8rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.25rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.history-bar {
+  background: linear-gradient(to top, #10b981, #34d399);
+  border-radius: 0.125rem 0.125rem 0 0;
+  transition: all 0.3s ease;
+}
+
+.history-bar:hover {
+  background: linear-gradient(to top, #8b5cf6, #ec4899);
+}
+
+.history-info {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.contador-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.contador-footer p {
+  margin: 0.25rem 0;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 640px) {
+  .contador-title {
+    font-size: 1.875rem;
+  }
+  
+  .contador-number {
+    font-size: 3rem;
+  }
+  
+  .contador-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
